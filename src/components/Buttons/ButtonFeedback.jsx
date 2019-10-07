@@ -8,7 +8,7 @@ import Spinner from '../Icons/Spinner'
 import Button from './Button';
 
 
-const ButtonFeedback = styled(Button)`
+const _ButtonFeedback = styled(Button)`
   transition: padding 200ms ease;
   ${({ showingIcon }) => (showingIcon ? 'padding:0.5em 0.4em;' : '')}
 
@@ -74,7 +74,7 @@ export const ButtonFeedback = ({ children = '', disabled = undefined, ...props }
   }
 
   return (
-    <ButtonFeedback
+    <_ButtonFeedback
       ref={ref}
       {...props}
       showingIcon={loading || fail || success}
@@ -88,7 +88,7 @@ export const ButtonFeedback = ({ children = '', disabled = undefined, ...props }
         {fail ? failIcon : null}
         {success ? successIcon : null}
       </span>
-    </ButtonFeedback>
+    </_ButtonFeedback>
   );
 };
 
