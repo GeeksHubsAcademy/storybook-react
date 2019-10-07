@@ -42,7 +42,7 @@ const ButtonFeedback = styled(Button)`
   }
 `;
 
-export default ({ children = '', disabled = undefined, ...props }) => {
+export const ButtonFeedback = ({ children = '', disabled = undefined, ...props }) => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [fail, setFail] = useState(false);
@@ -91,3 +91,5 @@ export default ({ children = '', disabled = undefined, ...props }) => {
     </ButtonFeedback>
   );
 };
+
+export default ButtonFeedback;

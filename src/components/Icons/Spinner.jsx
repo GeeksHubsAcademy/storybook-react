@@ -26,7 +26,7 @@ const StyledSpinner = styled.span`
   }
 `;
 
-const Spinner = () => (
+export const Spinner = () => (
   <StyledSpinner>
     <svg
       aria-hidden='true'

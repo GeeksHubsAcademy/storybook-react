@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledCheck = styled.span``;
 
-const Check = () => (
+export const Check = () => (
   <StyledCheck>
     <svg
       aria-hidden='true'

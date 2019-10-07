@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledFail = styled.span``;
 
-const Fail = () => (
+export const Fail = () => (
   <StyledFail>
     <svg
       aria-hidden='true'
