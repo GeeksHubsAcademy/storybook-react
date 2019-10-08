@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
+
 const StyledCheck = styled.span``;
 
 export const Check = () => (

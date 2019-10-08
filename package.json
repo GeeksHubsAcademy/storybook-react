@@ -13,7 +13,7 @@
     "start": "start-storybook -p 6006",
     "build:docs": "build-storybook -o docs",
     "webpack": "webpack --mode production",
-    "build:lib": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__,stories.js"
+    "build:lib": "rimraf dist && NODE_ENV=production babel src --out-dir dist"
   },
   "keywords": [
     "react",
@@ -24,10 +24,12 @@
   "author": "jupegarnica",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "react": "^16.10.2",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
@@ -35,6 +37,19 @@
     "@storybook/addon-links": "^5.2.1",
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "rimraf": "^3.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

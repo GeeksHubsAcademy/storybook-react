@@ -12,9 +12,7 @@ const _ButtonFeedback = styled(Button)`
   transition: padding 200ms ease;
   ${({ showingIcon }) => (showingIcon ? 'padding:0.5em 0.4em;' : '')}
 
-  ${({ disabled, loading }) =>
-    disabled && !loading ? 'opacity:0.7; filter: blur(1px);' : ''}
-
+  ${({ loading }) => (loading ? 'cursor:progress!important;' : '')}
   .icon {
     display: inline-block;
     height: 1em;
