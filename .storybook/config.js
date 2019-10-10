@@ -29,6 +29,19 @@ addParameters({
  },
 });
 
+// addon backgrounds
+addParameters({
+  backgrounds: [
+    { name: 'transparent', value: 'transparent', default: true },
+    { name: 'light', value: '#ddd' },
+    { name: 'lightest', value: '#fff' },
+    { name: 'dark', value: '#444' },
+    { name: 'darkest', value: '#000' },
+    { name: 'twitter', value: '#00aced' },
+    { name: 'facebook', value: '#3b5998' },
+  ],
+});
+
 // addon accessibility
 addDecorator(withA11y);
 addParameters({
