@@ -55,6 +55,7 @@ export const ButtonFeedback = ({ children = '', disabled = undefined, ...props }
   });
 
   async function interceptClick(...args) {
+
     setLoading(true);
     setSuccess(false);
     setFail(false);
@@ -78,7 +79,7 @@ export const ButtonFeedback = ({ children = '', disabled = undefined, ...props }
       showingIcon={loading || fail || success}
       onClick={interceptClick}
       disabled={loading || disabled}
-      loading={loading}
+      loading={loading.toString()}
     >
       {children}
       <span className='icon'>

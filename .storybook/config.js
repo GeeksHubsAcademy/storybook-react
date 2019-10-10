@@ -3,7 +3,12 @@ import { addParameters } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import {  addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
+import { setConsoleOptions } from '@storybook/addon-console';
 
+// addon console
+setConsoleOptions({
+  panelExclude: [],
+});
 // addon viewports
 const newViewports = {
   kindleFire2: {
