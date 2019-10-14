@@ -14,8 +14,14 @@
     "build": "npm run build:lib && npm run build:docs",
     "build:docs": "build-storybook -o docs",
     "build:lib": "rimraf dist && NODE_ENV=production babel src --out-dir dist",
+    "postbuild": "npm version patch",
+
     "predeploy": "npm run build",
-    "deploy": "git add docs dist && git commit -m 'build' && git push"
+    "postdeploy": "npm run publish",
+    "deploy": "git add docs dist package.json && git commit -m 'build' && git push",
+
+    "publish":"npm publish",
+    "prepublish":"npm login"
   },
   "keywords": [
     "react",
