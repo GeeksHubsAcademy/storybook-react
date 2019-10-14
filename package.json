@@ -1,6 +1,6 @@
 {
   "name": "storybook-react-geekshubs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "description": "",
   "main": "dist/index.js",
@@ -11,19 +11,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
-
     "prebuild": "npm version patch",
-
     "build": "npm run build:lib && npm run build:docs",
     "build:docs": "build-storybook -o docs",
     "build:lib": "rimraf dist && NODE_ENV=production babel src --out-dir dist",
-
     "predeploy": "npm run build",
     "deploy": "git add docs dist package.json && git commit -m 'build' && git push",
     "postdeploy": "npm run publish",
-
-    "publish":"npm publish",
-    "prepublish":"npm login"
+    "publish": "npm publish",
+    "prepublish": "npm login"
   },
   "keywords": [
     "react",
