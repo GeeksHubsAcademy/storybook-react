@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Button = styled.button`
   all: unset;
@@ -21,7 +21,6 @@ export const Button = styled.button`
   ${({ disabled, loading }) =>
     disabled && !loading ? 'opacity:0.7; filter: blur(1px);' : ''}
 
-
   :hover:not(:disabled) {
     filter: brightness(85%);
   }
@@ -32,7 +31,11 @@ export const Button = styled.button`
         backgroundColor ? backgroundColor : background};
     outline: none;
   }
+  :disabled {
+    cursor: not-allowed;
+  }
 
+  // layout
   & + & {
     margin-left: 0.5em;
   }
@@ -40,13 +43,11 @@ export const Button = styled.button`
     style &&
     style.display &&
     style.display.match('block') &&
-    `& + & {
-    margin-left: 0em;
-  }`}
-
-  :disabled {
-    cursor: not-allowed;
-  }
+    css`
+      & + & {
+        margin-left: 0em;
+      }
+    `}
 `;
 
-export default Button;
+export default ({href,...props}) => href ? <Button {...props} href={href} as="a"/>: <Button {...props} /> ;

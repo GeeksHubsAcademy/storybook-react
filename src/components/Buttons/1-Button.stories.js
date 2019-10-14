@@ -19,11 +19,11 @@ export const DisabledButtonBig = () => (
          </Button>
        );
 export const AsLink = () => (
-  <Button as='a'
-    href="#"
-    style={{ color: 'red', backgroundColor: '#222', fontSize: '40px' }}
+  <Button
+    href="http://geekshubs.com"
+    target="_blank"
   >
-    I am a link
+    I am a link because I have a prop href
   </Button>
 );
 
