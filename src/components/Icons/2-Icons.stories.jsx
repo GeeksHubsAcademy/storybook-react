@@ -26,5 +26,6 @@ export default {
 };
 
 export const _Spinner = () => <Spinner></Spinner>;
+export const _SpinnerStyles = () => <Spinner style={{color:'blue', width:'60px', height:'60px'}}></Spinner>;
 export const _Check = () => <Check></Check>;
 export const _Fail = () => <Fail></Fail>;
