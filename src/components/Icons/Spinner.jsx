@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledSpinner = styled.span`
+  width: 100%;
+  height: 100%;
   svg {
     transform: translateZ(1px);
     animation: spin 5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
@@ -26,8 +28,8 @@ const StyledSpinner = styled.span`
   }
 `;
 
-export const Spinner = () => (
-  <StyledSpinner>
+export const Spinner = props => (
+  <StyledSpinner {...props}>
     <svg
       aria-hidden='true'
       focusable='false'
@@ -46,4 +48,4 @@ export const Spinner = () => (
   </StyledSpinner>
 );
 
-export default Spinner
+export default Spinner;
