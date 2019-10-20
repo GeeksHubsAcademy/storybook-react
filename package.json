@@ -34,9 +34,9 @@
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-a11y": "^5.2.3",
@@ -50,6 +50,7 @@
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
     "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
     "rimraf": "^3.0.0"
   },
   "browserslist": {
