@@ -11,6 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
+    "createIndexs":"create-index ./src -r --extensions js jsx ",
     "prebuild": "npm version patch",
     "build": "npm run build:lib && npm run build:docs",
     "build:docs": "build-storybook -o docs",
@@ -30,6 +31,7 @@
   "author": "jupegarnica",
   "license": "ISC",
   "dependencies": {
+    "create-index": "^2.4.0",
     "react": "^16.10.2",
     "styled-components": "^4.4.0"
   },
