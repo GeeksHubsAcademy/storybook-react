@@ -1,6 +1,6 @@
 {
   "name": "storybook-react-geekshubs",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "description": "",
   "main": "dist/index.js",
@@ -14,7 +14,6 @@
     "create-index": "create-index-plus ./dist -r --extensions js jsx ",
     "patch": "npm version patch",
     "postbuild": "npm run create-index",
-
     "prebuild": "npm run patch",
     "build": "npm run build:lib && npm run build:docs",
     "build:docs": "build-storybook -o docs",
