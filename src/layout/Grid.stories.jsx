@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'styled-components';
 import GridContainer from './GridContainer';
+import 'styled-components/macro';
 
 const GridItem = p => (
   <span

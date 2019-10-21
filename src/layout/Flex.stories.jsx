@@ -1,7 +1,7 @@
 import React from 'react';
 // import { css } from 'styled-components';
 import FlexContainer from './FlexContainer';
-
+import 'styled-components/macro';
 const FlexItem = (p) => <span {...p}  css={`background-color:purple; border: 2px black  solid; color:white;; padding:0.5em;`}/>;
 
 export default {
