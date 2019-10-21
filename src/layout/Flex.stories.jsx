@@ -5,7 +5,7 @@ import FlexContainer from './FlexContainer';
 const FlexItem = (p) => <span {...p}  css={`background-color:purple; border: 2px black  solid; color:white;; padding:0.5em;`}/>;
 
 export default {
-  title: 'Layout/Flexbox!',
+  title: 'Layout/Flexbox',
 };
 
 const generateArray = (length, fn) => Array.from({ length }, fn);
