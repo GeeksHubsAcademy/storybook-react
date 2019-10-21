@@ -1,5 +1,5 @@
 // @create-index
 
-export { default as FlexContainer } from './FlexContainer.jsx';
-export { default as GridContainer } from './GridContainer.jsx';
+export { default as flexContainer } from './FlexContainer.jsx';
+export { default as gridContainer } from './GridContainer.jsx';
 

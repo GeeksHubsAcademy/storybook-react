@@ -1,5 +1,5 @@
 // @create-index
 
-export { default as Buttons } from './Buttons';
-export { default as Icons } from './Icons';
+export { default as buttons } from './Buttons';
+export { default as icons } from './Icons';
 

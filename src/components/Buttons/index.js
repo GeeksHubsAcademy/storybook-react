@@ -1,5 +1,5 @@
 // @create-index
 
-export { default as Button } from './Button.jsx';
-export { default as ButtonFeedback } from './ButtonFeedback.jsx';
+export { default as button } from './Button.jsx';
+export { default as buttonFeedback } from './ButtonFeedback.jsx';
 
