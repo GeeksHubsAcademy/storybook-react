@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
-    "createIndex": "create-index ./src -r --extensions js jsx ",
+    "createIndex": "create-index-plus ./src -r --extensions js jsx ",
     "patch": "npm version patch",
     "postpatch": "npm run createIndex",
     "prebuild": "npm run patch",
