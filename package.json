@@ -1,6 +1,6 @@
 {
   "name": "storybook-react-geekshubs",
-  "version": "0.0.10",
+  "version": "0.0.9",
   "type": "module",
   "description": "",
   "main": "dist/index.js",
@@ -11,9 +11,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
-    "create-index": "create-index-plus ./dist -r --extensions js jsx ",
+    "create-index": "create-index ./src -r  --extensions js jsx stories.js stories.jsx",
+    "remove-index": "rm -rf ./src/**/index.*",
     "patch": "npm version patch",
-    "postbuild": "npm run create-index",
+    "postpatch": "npm run create-index",
     "prebuild": "npm run patch",
     "build": "npm run build:lib && npm run build:docs",
     "build:docs": "build-storybook -o docs",
