@@ -22,7 +22,7 @@ const FlexContainer = styled.div`
   flex-direction: ${({ column }) => column && 'column;'};
   flex-wrap: ${({ wrap }) => (wrap ? 'wrap' : 'nowrap')};
   justify-content: ${({ justifyContent = 'flex-start' }) => justifyContent};
-  align-items: ${({ alignItems = 'flex-start' }) => alignItems};
+  align-items: ${({ alignItems = 'stretch' }) => alignItems};
   align-content: ${({ alignContents = 'center' }) => alignContents};
 
   ${({ grows }) =>
