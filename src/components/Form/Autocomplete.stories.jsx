@@ -80,3 +80,33 @@ export const setValueFromOutside = () => {
     </>
   );
 };
+
+
+
+
+export const variosInline = () => {
+  const [value, setValue] = useState(dataSourceObj[0]);
+
+  return (
+    <>
+      <Autocomplete
+        source={dataSourceObj}
+        value={value}
+        onChange={setValue}
+        mapItemToValue={item => item.value}
+      />
+      <Autocomplete
+        source={dataSourceObj}
+        value={value}
+        onChange={setValue}
+        mapItemToValue={item => item.value}
+      />
+      <Autocomplete
+        source={dataSourceObj}
+        value={value}
+        onChange={setValue}
+        mapItemToValue={item => item.value}
+      />
+    </>
+  );
+};

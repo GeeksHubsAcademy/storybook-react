@@ -12,6 +12,7 @@ const StyledAutocomplete = styled.span`
     text-decoration:underline;
   }
   ul {
+
     position: absolute;
     right: 0;
     left: 0;
@@ -82,8 +83,12 @@ const Autocomplete = ({
         inputProps={{
           placeholder: placeholder,
           value: value,
-          onBlur: (ev, { highlightedSuggestion }) => {
-            setValue(mapItemToValue(props.value));
+          onBlur: () => {
+           if (typeof props.onBlur === 'function') {
+             props.onBlur(value)
+           } else {
+             setValue(mapItemToValue(props.value));
+           }
           },
           onChange: (event, { newValue }) => {
             setValue(newValue);
