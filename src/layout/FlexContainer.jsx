@@ -34,7 +34,7 @@ const FlexContainer = styled.div`
     `}
   ${({ grows }) => +grows >= 0 && growChild(grows)}
 
-    ${({ grows = [] }) =>
+  ${({ grows = [] }) =>
       Array.isArray(grows) && ''.concat(...grows.map(growChild))}
 
 
@@ -46,7 +46,7 @@ const FlexContainer = styled.div`
 
  export default p => (
    <>
-     <GlobalStyle />
+     <GlobalStyle {...p}/>
      <FlexContainer {...p} />
    </>
  );
