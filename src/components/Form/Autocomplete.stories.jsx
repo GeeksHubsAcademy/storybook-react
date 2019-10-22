@@ -126,3 +126,22 @@ export const customOnBlur = () => {
     </>
   );
 };
+
+
+
+export const customOnEnter = () => {
+  const [value, setValue] = useState('');
+
+  return (
+    <>
+      <h6>Value selected: {value}</h6>
+      <Autocomplete
+        source={[1, 2, 3, 45, 67, 89, 100]}
+        value={value}
+        onChange={setValue}
+        onBlur={setValue}
+        onEnter={setValue}
+      />
+    </>
+  );
+};

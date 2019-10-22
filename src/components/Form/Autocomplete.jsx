@@ -91,7 +91,14 @@ const Autocomplete = ({
              setValue(mapItemToValue(props.value));
            }
           },
+          onKeyUp: (event) => {
+
+             if (event.keyCode === 13) {
+              typeof props.onEnter === 'function' && props.onEnter(value);
+             }
+          },
           onChange: (event, { newValue }) => {
+
             setValue(newValue);
           },
         }}
