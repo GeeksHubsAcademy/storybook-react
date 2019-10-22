@@ -57,7 +57,7 @@ export const SourceAsObjects = () => {
       source={dataSourceObj}
       value={value}
       onChange={setValue}
-      mapItemToValue={item => item.value}
+      // mapItemToValue={item => item.value}
     />
   );
 };

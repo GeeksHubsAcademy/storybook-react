@@ -8,6 +8,9 @@ const Input = props => <input {...props} />;
 
 const StyledAutocomplete = styled.span`
   position: relative;
+  .highlighted {
+    text-decoration:underline;
+  }
   ul {
     position: absolute;
     right: 0;
@@ -25,11 +28,17 @@ const StyledAutocomplete = styled.span`
   }
 `;
 const defaultMapItemToValue = item => item.value || item.text || item;
-const defaultRenderSuggestion = item => (
-  <div>{defaultMapItemToValue(item)}</div>
-);
-
-const defaultRenderInputComponent =props => <Input {...props} />;
+// const defaultRenderSuggestion = item => (
+//   <div>{defaultMapItemToValue(item)}</div>
+// );
+function defaultRenderSuggestion(suggestion, { query, isHighlighted }) {
+  return (
+    <div className={`suggestion ${isHighlighted && 'highlighted'}`}>
+     { defaultMapItemToValue(suggestion)}
+    </div>
+  );
+}
+const defaultRenderInputComponent = props => <Input {...props} />;
 
 const Autocomplete = ({
   placeholder,
@@ -80,6 +89,7 @@ const Autocomplete = ({
             setValue(newValue);
           },
         }}
+        highlightFirstSuggestion
         alwaysRenderSuggestions={false}
         {...props}
       />
