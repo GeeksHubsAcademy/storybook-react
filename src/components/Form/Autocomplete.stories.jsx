@@ -61,3 +61,22 @@ export const SourceAsObjects = () => {
     />
   );
 };
+
+
+
+
+export const setValueFromOutside = () => {
+  const [value, setValue] = useState(dataSourceObj[0]);
+
+  return (
+    <>
+      <button onClick={() => setValue(dataSourceObj[3])}>change value</button>
+      <Autocomplete
+        source={dataSourceObj}
+        value={value}
+        onChange={setValue}
+        mapItemToValue={item => item.value}
+      />
+    </>
+  );
+};
