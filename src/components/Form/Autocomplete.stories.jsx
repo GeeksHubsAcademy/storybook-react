@@ -82,8 +82,6 @@ export const setValueFromOutside = () => {
 };
 
 
-
-
 export const variosInline = () => {
   const [value, setValue] = useState(dataSourceObj[0]);
 
@@ -106,6 +104,24 @@ export const variosInline = () => {
         value={value}
         onChange={setValue}
         mapItemToValue={item => item.value}
+      />
+    </>
+  );
+};
+
+
+
+export const customOnBlur = () => {
+  const [value, setValue] = useState('');
+
+  return (
+    <>
+    <h6>Value selected: {value}</h6>
+      <Autocomplete
+        source={[1, 2, 3, 45, 67, 89, 100]}
+        value={value}
+        onChange={setValue}
+        onBlur={setValue}
       />
     </>
   );

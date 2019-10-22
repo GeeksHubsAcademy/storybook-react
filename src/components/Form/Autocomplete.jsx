@@ -8,6 +8,7 @@ const Input = props => <input {...props} />;
 
 const StyledAutocomplete = styled.span`
   position: relative;
+
   .highlighted {
     text-decoration:underline;
   }
@@ -28,14 +29,14 @@ const StyledAutocomplete = styled.span`
     }
   }
 `;
-const defaultMapItemToValue = item => item.value || item.text || item;
+const defaultMapItemToValue = item => item.value || item.text || String(item);
 // const defaultRenderSuggestion = item => (
 //   <div>{defaultMapItemToValue(item)}</div>
 // );
 function defaultRenderSuggestion(suggestion, { query, isHighlighted }) {
   return (
     <div className={`suggestion ${isHighlighted && 'highlighted'}`}>
-     { defaultMapItemToValue(suggestion)}
+     { defaultMapItemToValue(suggestion) }
     </div>
   );
 }
