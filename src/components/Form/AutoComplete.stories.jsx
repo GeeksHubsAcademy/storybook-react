@@ -29,6 +29,15 @@ const dataSource = [
   'yei',
 ];
 
+
+
+export const Default = () => {
+  const [value, setvalue] = useState('');
+
+  return <Autocomplete source={dataSource} value={value} onChange={setvalue} />;
+};
+
+
 export const Default = () => {
   const [value, setvalue] = useState('');
 
