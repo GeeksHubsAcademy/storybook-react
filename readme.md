@@ -53,7 +53,7 @@ import Button from "storybook-react-geekshubs/dist/components/Buttons/Button";
 
 ```
 
-### scripts
+### Scripts
 
 ```json
     "start": "start-storybook -p 6006",
@@ -71,7 +71,7 @@ import Button from "storybook-react-geekshubs/dist/components/Buttons/Button";
 
 ### Deployment
 
-Run `npm run deploy`  to do everything:  bump patch version, build docs and lib, push to github nad publish to npm
+Run `npm run deploy`  to do everything:  bump patch version, build docs and lib, push to github and publish to npm
 
 ### Sources
 
