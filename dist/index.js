@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var message="\nImporta los componentes individualmente,  por ejemplo:\n\nimport Button from \"storybook-react-geekshubs/dist/components/Buttons/Button\";\n";console.warn(message);var _default=message;exports.default=_default;
