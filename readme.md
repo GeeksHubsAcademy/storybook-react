@@ -53,6 +53,25 @@ import Button from "storybook-react-geekshubs/dist/components/Buttons/Button";
 
 ```
 
+### scripts
+
+```json
+    "start": "start-storybook -p 6006",
+    "patch": "npm version patch",
+    "prebuild": "npm run patch",
+    "build": "npm run build:lib && npm run build:docs",
+    "build:docs": "build-storybook -o docs",
+    "build:lib": "rimraf dist && NODE_ENV=production babel src --out-dir dist",
+    "predeploy": "npm run build",
+    "deploy": "git add . && git commit -m 'build' && git push",
+    "postdeploy": "npm run publi",
+    "publi": "npm publish",
+    "prepubli": "npm whoami || npm login"
+```
+
+### Deployment
+
+Run `npm run deploy`  to do everything:  bump patch version, build docs and lib, push to github nad publish to npm
 
 ### Sources
 
