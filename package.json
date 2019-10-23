@@ -20,7 +20,7 @@
     "deploy": "git add . && git commit -m 'build' && git push",
     "postdeploy": "npm run publi",
     "publi": "npm publish",
-    "prepubli": "npm login"
+    "prepubli": "npm whoami || npm login"
   },
   "keywords": [
     "react",
