@@ -1,19 +1,11 @@
 // FROM: https://github.com/ngokevin/react-file-reader-input
-// @flow
 import * as React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
-type Props = {
-  as?: 'binary' | 'buffer' | 'text' | 'url',
-  children?: React.Node,
-  onChange: Function,
-  style?: Object
-};
+export default class FileInput extends React.Component {
+  _reactFileReaderInput;
 
-export default class FileInput extends React.Component<Props> {
-  _reactFileReaderInput: any;
-
-  constructor(props: Props) {
+  constructor(props) {
     // FileReader compatibility warning.
     super(props);
 
@@ -24,9 +16,10 @@ export default class FileInput extends React.Component<Props> {
         ' File reader functionality may not fully work.'
       );
     }
+    this.input = React.createRef();
   }
 
-  handleChange = (e: any) => {
+  handleChange = (e) => {
     const files = Array.prototype.slice.call(e.target.files); // Convert into Array
     const readAs = (this.props.as || 'url').toLowerCase();
 
@@ -42,7 +35,7 @@ export default class FileInput extends React.Component<Props> {
       // Read the file with format based on this.props.as.
       switch (readAs) {
         case 'binary': {
-          (reader: any).readAsBinaryString(file);
+          (reader).readAsBinaryString(file);
           break;
         }
         case 'buffer': {
@@ -66,32 +59,23 @@ export default class FileInput extends React.Component<Props> {
   }
 
   triggerInput = () => {
-    const input = ((ReactDOM.findDOMNode(this._reactFileReaderInput): any): HTMLInputElement);
-    if (input) {
-      input.click();
-    }
+    this.input.current.click();
   }
 
   render() {
     const { as, children, style, ...props } = this.props;
 
-    const hiddenInputStyle = children ? {
-      // If user passes in children, display children and hide input.
-      position: 'absolute',
-      top: '-9999px'
-    } : {};
 
     return (
       <div className="_react-file-reader-input" onClick={this.triggerInput} style={style}>
         <input
           {...props}
           type="file"
-          ref={(c) => { this._reactFileReaderInput = c; }}
+          ref={this.input }
           onChange={this.handleChange}
-          onClick={() => { this._reactFileReaderInput.value = null; }}
-          style={hiddenInputStyle}
+          hidden
         />
-        {children}
+        {children || <button>upload</button>}
       </div>
     );
   }

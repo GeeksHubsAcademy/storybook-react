@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import FileInput from './FileInput.ts';
+import FileInput from './FileInput';
 
 const Wrapper = styled.div`
   display: flex;
@@ -32,6 +32,15 @@ export const FileInputDefault = () => (
            <label htmlFor='my-file-input'>Upload a File:</label>
            <FileInput as='text' id='my-file-input' onChange={handleChange}>
              {/* <button>Select a file!</button> */}
+           </FileInput>
+         </>
+       );
+
+
+export const FileInputChildren = () => (
+         <>
+           <FileInput as='text' id='my-file-input' onChange={handleChange}>
+             <a>upload</a>
            </FileInput>
          </>
        );
