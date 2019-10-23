@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import FileInput from './FileInput';
+import FileInput from './FileInput.ts';
 
 const Wrapper = styled.div`
   display: flex;
