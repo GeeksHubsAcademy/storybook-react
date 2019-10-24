@@ -1,6 +1,6 @@
 {
   "name": "storybook-react-geekshubs",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "type": "module",
   "description": "",
   "main": "dist/index.js",
