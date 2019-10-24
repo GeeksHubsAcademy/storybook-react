@@ -1,14 +1,11 @@
 // FROM: https://github.com/ngokevin/react-file-reader-input
 import * as React from 'react';
-// import ReactDOM from 'react-dom';
 
 export default class FileInput extends React.Component {
-  _reactFileReaderInput;
-
   constructor(props) {
-    // FileReader compatibility warning.
     super(props);
 
+    // FileReader compatibility warning.
     const win = typeof window === 'object' ? window : {};
     if (!win.File || !win.FileReader || !win.FileList || !win.Blob) {
       console.warn(
@@ -20,6 +17,8 @@ export default class FileInput extends React.Component {
   }
 
   handleChange = (e) => {
+    e.preventDefault();
+
     const files = Array.prototype.slice.call(e.target.files); // Convert into Array
     const readAs = (this.props.as || 'url').toLowerCase();
 
@@ -63,11 +62,11 @@ export default class FileInput extends React.Component {
   }
 
   render() {
-    const { as, children, style, ...props } = this.props;
+    const { as, children, style, key,...props } = this.props;
 
 
     return (
-      <div className="_react-file-reader-input" onClick={this.triggerInput} style={style}>
+      <div key={key} className="_react-file-reader-input" onClick={this.triggerInput} style={style}>
         <input
           {...props}
           type="file"

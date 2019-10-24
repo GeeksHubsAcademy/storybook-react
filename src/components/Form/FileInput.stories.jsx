@@ -19,7 +19,6 @@ export default {
 };
 
 const handleChange = (e, results) => {
-  e.preventDefault();
   results.forEach(result => {
     const [e, file] = result;
     console.log((e.target.result));
@@ -40,7 +39,7 @@ export const FileInputDefault = () => (
 export const FileInputChildren = () => (
          <>
            <FileInput as='text' id='my-file-input' onChange={handleChange}>
-             <a>upload</a>
+             <a href="#">upload</a>
            </FileInput>
          </>
        );
