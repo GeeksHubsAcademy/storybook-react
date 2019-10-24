@@ -16,18 +16,19 @@ export default class FileInput extends React.Component {
     this.input = React.createRef();
   }
 
-  handleChange = (e) => {
-    e.preventDefault();
+  handleChange = (event) => {
+    event.preventDefault();
 
-    const files = Array.prototype.slice.call(e.target.files); // Convert into Array
+    const files = Array.prototype.slice.call(event.target.files); // Convert into Array
     const readAs = (this.props.as || 'url').toLowerCase();
 
     // Build Promise List, each promise resolved by FileReader.onload.
     Promise.all(files.map(file => new Promise((resolve, reject) => {
       let reader = new FileReader();
 
-      reader.onload = result => {
+      reader.onload = ev => {
         // Resolve both the FileReader result and its original file.
+        const result = ev.target.result
         resolve([result, file]);
       };
 
@@ -51,9 +52,9 @@ export default class FileInput extends React.Component {
         }
       }
     })))
-    .then(zippedResults => {
+    .then(results => {
       // Run the callback after all files have been read.
-      this.props.onChange(e, zippedResults);
+      this.props.onChange( results, event);
     });
   }
 

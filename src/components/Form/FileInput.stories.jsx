@@ -18,11 +18,11 @@ export default {
   decorators: [decorator],
 };
 
-const handleChange = (e, results) => {
+const handleChange = (results) => {
   results.forEach(result => {
-    const [e, file] = result;
-    console.log((e.target.result));
-    console.log(`Successfully uploaded ${file.name}!`);
+    const [data, metadata] = result;
+    console.log(data);
+    console.log(`Successfully uploaded ${metadata.name}!`);
   });
 };
 
