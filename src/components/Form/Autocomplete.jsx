@@ -8,11 +8,16 @@ const Input = props => <input {...props} />;
 
 const StyledAutocomplete = styled.span`
   position: relative;
+  * {
+    box-sizing: border-box;
+  }
 
   .highlighted {
-    text-decoration:underline;
+    text-decoration: underline;
   }
-  ul {
+  [role='listbox'] {
+    /* width: max-content; */
+    width: 100%;
 
     position: absolute;
     right: 0;
@@ -20,11 +25,16 @@ const StyledAutocomplete = styled.span`
     padding: 0.4em 0;
     margin: 0;
     z-index: 1;
+
+    ul {
+      background: white;
+      padding: 0.3em;
+    }
     li {
       all: unset;
       display: block;
       width: 100%;
-      margin: 0 0.1em;
+      padding: 0.1em 0;
       cursor: pointer;
     }
   }
@@ -43,6 +53,7 @@ function defaultRenderSuggestion(suggestion, { query, isHighlighted }) {
 const defaultRenderInputComponent = props => <Input {...props} />;
 
 const Autocomplete = ({
+  key,
   placeholder,
   source,
   mapItemToValue = defaultMapItemToValue,
@@ -63,7 +74,7 @@ const Autocomplete = ({
   }, [source.length]);
 
   return (
-    <StyledAutocomplete>
+    <StyledAutocomplete key={key}>
       <Autosuggest
         suggestions={filteredSource}
         onSuggestionsFetchRequested={({ value }) => {
