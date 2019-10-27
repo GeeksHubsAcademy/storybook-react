@@ -130,4 +130,11 @@ addParameters({
   },
 });
 // automatically import all files ending in *.stories.js
-configure(require.context('../src/', true, /\.stories\.jsx?$/), module);
+configure(
+  require.context(
+    '../src/',
+    true,
+    /(\-story\.jsx?$)|(\.stories\.jsx?$)/,
+  ),
+  module,
+);

@@ -73,9 +73,10 @@ import Button from "storybook-react-geekshubs/dist/components/Buttons/Button";
 
 Run `npm run deploy`  to do everything:  bump patch version, build docs and lib, push to github and publish to npm
 
-### Sources
+### Sources y licenses
 
 - https://github.com/brillout/awesome-react-components
 - https://github.com/enaqx/awesome-react
 - https://github.com/nikgraf/react-hooks
 - https://github.com/0wczar/airframe-react
+- https://github.com/carbon-design-system/carbon/tree/master/packages/react
