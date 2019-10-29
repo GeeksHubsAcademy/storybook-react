@@ -30,7 +30,6 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 // const NODE_ENV = 'production';
 if (NODE_ENV === 'production') {
   console = _console;
-  window.console = _console;
   // global.console = _console;
 }
 export default console;
