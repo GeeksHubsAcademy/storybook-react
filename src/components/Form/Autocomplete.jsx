@@ -20,17 +20,14 @@ const StyledAutocomplete = styled.span`
     width: intrinsic; /* Safari/WebKit uses a non-standard name */
     width: -moz-max-content; /* Firefox/Gecko */
     width: -webkit-max-content; /* Chrome */
-
     position: absolute !important;
     right: 0;
     left: 0;
     padding: 0.4em 0;
     margin: 0;
     z-index: 3;
-    ul {
-      background: white;
-      padding: 0.3em;
-    }
+    background: white;
+    padding: 0.3em;
     li {
       all: unset;
       display: block;
