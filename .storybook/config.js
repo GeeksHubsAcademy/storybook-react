@@ -6,6 +6,7 @@ import { withA11y } from '@storybook/addon-a11y';
 import { setConsoleOptions } from '@storybook/addon-console';
 import theme from './theme';
 import './overrides.css';
+// import '../src/servicies/logger.service';
 
 // Option defaults:
 addParameters({

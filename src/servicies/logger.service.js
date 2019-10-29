@@ -1,36 +1,56 @@
-class Logger {
-  constructor() {
-    this.logsDone = 0;
-    if (process.env.NODE_ENV === 'production') {
-      this.console = { log: () => {} };
-    } else {
-      this.console = console;
-    }
-  }
 
-  log(...args) {
-    this.logsDone++;
-    this.console.log(...args);
-    return args;
-  }
+  const noFn =function(...args){
+    // alert('no log')
+    return args
 
-  howManyLogs() {
-    return this.logsDone;
-  }
-}
+  };
+  const _console = {
+    assert: noFn,
+    clear: noFn,
+    context: noFn,
+    count: noFn,
+    countReset: noFn,
+    debug: noFn,
+    dir: noFn,
+    dirxml: noFn,
+    error: noFn,
+    group: noFn,
+    groupCollapsed: noFn,
+    groupEnd: noFn,
+    info: noFn,
+    log: noFn,
+    profile: noFn,
+    profileEnd: noFn,
+    table: noFn,
+    time: noFn,
+    timeEnd: noFn,
+    timeLog: noFn,
+    timeStamp: noFn,
+    trace: noFn,
+    warn: noFn,
+  };
+  // console.log(window.console);
+  // window.console = _console;
+  // console  = _console;
 
-export default new Logger();
+  // class Logger {
+  //   constructor() {
+  //     if (process.env.NODE_ENV === 'production') {
+  //       this = {
+  //         ...this,
+  //         ..._console
+  //       };
+  //     } else {
+  //        this = {
+  //         ...this,
+  //         ...console
+  //       };
+  //     }
+  //   }
+  // }
+  const NODE_ENV = process.env.NODE_ENV || 'development';
+  // const NODE_ENV = 'production';
 
-// export default {
-//   logsDone: 0,
-//   console: process.env.NODE_ENV === 'PRODUCTION' ? { log: () => {} } : console,
-//   log(...args) {
-//     this.logsDone++;
-//     this.console.log(...args);
-//     return args;
-//   },
-
-//   howManyLogs() {
-//     return this.logsDone;
-//   },
-// };
+  export default NODE_ENV === 'production'
+    ? _console
+    : console;
