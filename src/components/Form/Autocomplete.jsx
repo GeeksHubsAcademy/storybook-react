@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const Input = props => <input {...props} />;
 
 const StyledAutocomplete = styled.span`
-  position: relative;
+  position: relative !important;
   * {
     box-sizing: border-box;
   }
@@ -15,17 +15,18 @@ const StyledAutocomplete = styled.span`
   .highlighted {
     text-decoration: underline;
   }
-  [role='listbox'] {
-    /* width: max-content; */
+  ul[role='listbox'] {
     width: 100%;
+    width: intrinsic; /* Safari/WebKit uses a non-standard name */
+    width: -moz-max-content; /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
 
-    position: absolute;
+    position: absolute !important;
     right: 0;
     left: 0;
     padding: 0.4em 0;
     margin: 0;
-    z-index: 1;
-
+    z-index: 3;
     ul {
       background: white;
       padding: 0.3em;
