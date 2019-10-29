@@ -17,10 +17,12 @@ const StyledAutocomplete = styled.span`
   }
   ul[role='listbox'] {
     width: 100%;
+
     width: intrinsic; /* Safari/WebKit uses a non-standard name */
     width: -moz-max-content; /* Firefox/Gecko */
     width: -webkit-max-content; /* Chrome */
-    position: absolute !important;
+
+    position: absolute ;
     right: 0;
     left: 0;
     padding: 0.4em 0;
@@ -29,7 +31,7 @@ const StyledAutocomplete = styled.span`
     background: white;
     padding: 0.3em;
     li {
-      all: unset;
+      list-style:none;
       display: block;
       width: 100%;
       padding: 0.1em 0;
@@ -72,7 +74,7 @@ const Autocomplete = ({
   }, [source.length]);
 
   return (
-    <StyledAutocomplete key={key}>
+    <StyledAutocomplete key={key} className="AutocompleteWrapper">
       <Autosuggest
         suggestions={filteredSource}
         onSuggestionsFetchRequested={({ value }) => {
