@@ -79,3 +79,4 @@ Run `npm run deploy`  to do everything:  bump patch version, build docs and lib,
 - https://github.com/enaqx/awesome-react
 - https://github.com/nikgraf/react-hooks
 - https://github.com/0wczar/airframe-react
+- https://github.com/rsuite/rsuite
