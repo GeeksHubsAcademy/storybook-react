@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const decorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 export default {
-  title: 'Form/FileInput',
+  title: 'Components|Form/FileInput',
   decorators: [decorator],
 };
 

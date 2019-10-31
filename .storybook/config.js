@@ -75,7 +75,10 @@ addParameters({
      * be the order they display
      * @type {Function}
      */
-    storySort: undefined,
+    storySort: (a, b) =>
+      a[1].kind === b[1].kind
+        ? 0
+        : 1,
   },
 });
 // addon console

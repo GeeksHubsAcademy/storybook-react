@@ -10,7 +10,7 @@ import 'rsuite/dist/styles/rsuite-default.css';
 
 
 export default {
-  title: 'Buttons/rsuite-buttons',
+  title: 'Components|Buttons/withIcons',
 };
 
 export const ButtonIcons = () => (

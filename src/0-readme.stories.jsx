@@ -11,7 +11,7 @@ const Wrapper = styled.pre`
 
 const decorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 export default {
-  title: 'Introduction',
+  title: 'Introduction|readme',
   decorators: [decorator],
 };
 

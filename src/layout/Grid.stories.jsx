@@ -16,7 +16,7 @@ const GridItem = p => (
 );
 
 export default {
-  title: 'Layout/Grid',
+  title: 'Layout|Grid',
 };
 
 const generateArray = (length, fn) => Array.from({ length }, fn);

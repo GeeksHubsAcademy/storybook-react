@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 
 const decorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 export default {
-  title: 'Icons',
+  title: 'Components|Icons',
   decorators: [decorator],
 };
 

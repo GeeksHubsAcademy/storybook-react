@@ -8,7 +8,7 @@ const fail = delay => new Promise((res, rej) => setTimeout(rej, delay, res));
 const randomFail = delay => (Math.random() > 0.5 ? wait(delay) : fail(delay));
 
 export default {
-  title: 'Buttons/ButtonFeedback',
+  title: 'Components|Buttons/ButtonFeedback',
 };
 
 
