@@ -33,7 +33,11 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-autosuggest": "^9.4.3",
+    "react-frame-component": "^4.1.1",
     "react-markdown": "^4.2.2",
+    "react-use": "^13.6.3",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "rsuite": "^4.0.5",
     "styled-components": "^4.4.0"
   },
@@ -43,6 +47,7 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.7.2",
     "@storybook/addon-a11y": "^5.2.5",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-backgrounds": "^5.2.5",

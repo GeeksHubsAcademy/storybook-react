@@ -1,14 +1,21 @@
 module.exports = function(api) {
   api.cache(true);
 
-  const presets = ['@babel/preset-env', '@babel/preset-react'];
-  const plugins = ['@babel/plugin-proposal-class-properties','babel-plugin-styled-components'];
+  const presets = [
+    '@babel/preset-env',
+    '@babel/preset-react',
+    '@babel/preset-typescript',
+  ];
+  const plugins = [
+    '@babel/plugin-proposal-class-properties',
+    'babel-plugin-styled-components',
+  ];
 
   return {
     presets,
     plugins,
     exclude: ['**/*stories.js'],
-    minified:true,
-    comments:false,
+    minified: true,
+    comments: false,
   };
 };

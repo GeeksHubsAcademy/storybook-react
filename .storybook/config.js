@@ -1,7 +1,7 @@
 import { configure } from '@storybook/react';
 import { addParameters } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import {  addDecorator } from '@storybook/react';
+import { addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { setConsoleOptions } from '@storybook/addon-console';
 import theme from './theme';
@@ -75,10 +75,7 @@ addParameters({
      * be the order they display
      * @type {Function}
      */
-    storySort: (a, b) =>
-      a[1].kind === b[1].kind
-        ? 0
-        : 1,
+    storySort: (a, b) => (a[1].kind === b[1].kind ? 0 : 1),
   },
 });
 // addon console
@@ -103,11 +100,12 @@ const newViewports = {
   },
 };
 addParameters({
-  viewport: { viewports: {
+  viewport: {
+    viewports: {
       ...INITIAL_VIEWPORTS,
-      newViewports
-    }
- },
+      newViewports,
+    },
+  },
 });
 
 // addon backgrounds
@@ -134,4 +132,14 @@ addParameters({
   },
 });
 // automatically import all files ending in *.stories.js
-configure(require.context('../src/', true, /\.stories\.jsx?$/), module);
+configure(
+  require.context(
+    '../src/',
+    true,
+    // /\.(stories)\.jsx?$/,
+
+    // /react-use\/.*\.(stories|story)\.(js|jsx|ts|tsx)?$/,
+    /\.(stories|story)\.[tj]sx?$/,
+  ),
+  module,
+);
