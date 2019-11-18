@@ -75,8 +75,9 @@ Run `npm run deploy`  to do everything:  bump patch version, build docs and lib,
 
 ### Sources
 
+- https://ant.design/docs/react/introduce
 - https://github.com/brillout/awesome-react-components
 - https://github.com/enaqx/awesome-react
 - https://github.com/nikgraf/react-hooks
-- https://github.com/0wczar/airframe-react
-- https://github.com/rsuite/rsuite
+<!-- - https://github.com/0wczar/airframe-react
+- https://github.com/rsuite/rsuite -->
