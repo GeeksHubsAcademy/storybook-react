@@ -22,7 +22,7 @@ const StyledAutocomplete = styled.span`
     width: -moz-max-content; /* Firefox/Gecko */
     width: -webkit-max-content; /* Chrome */
 
-    position: absolute ;
+    position: absolute;
     right: 0;
     left: 0;
     padding: 0.4em 0;
@@ -31,7 +31,7 @@ const StyledAutocomplete = styled.span`
     background: white;
     padding: 0.3em;
     li {
-      list-style:none;
+      list-style: none;
       display: block;
       width: 100%;
       padding: 0.1em 0;
@@ -39,18 +39,26 @@ const StyledAutocomplete = styled.span`
     }
   }
 `;
-const defaultMapItemToValue = item => item.value || item.text || String(item);
+const defaultMapItemToValue = item =>
+  item ? item.value || item.text || String(item) : '';
 // const defaultRenderSuggestion = item => (
 //   <div>{defaultMapItemToValue(item)}</div>
 // );
-function defaultRenderSuggestion(suggestion, { query, isHighlighted }) {
+function defaultRenderSuggestion(
+  suggestion,
+  { query, isHighlighted },
+) {
   return (
-    <div className={`suggestion ${isHighlighted && 'highlighted'}`}>
-     { defaultMapItemToValue(suggestion) }
+    <div
+      className={`suggestion ${isHighlighted && 'highlighted'}`}
+    >
+      {defaultMapItemToValue(suggestion)}
     </div>
   );
 }
-const defaultRenderInputComponent = props => <Input {...props} />;
+const defaultRenderInputComponent = props => (
+  <Input {...props} />
+);
 
 const Autocomplete = ({
   key,
@@ -62,7 +70,9 @@ const Autocomplete = ({
   renderInputComponent = defaultRenderInputComponent,
   ...props
 }) => {
-  const [value, setValue] = useState(mapItemToValue(props.value));
+  const [value, setValue] = useState(
+    mapItemToValue(props.value),
+  );
   const [filteredSource, setSource] = useState(source || []);
 
   useEffect(() => {
@@ -74,7 +84,10 @@ const Autocomplete = ({
   }, [source.length]);
 
   return (
-    <StyledAutocomplete key={key} className="AutocompleteWrapper">
+    <StyledAutocomplete
+      key={key}
+      className='AutocompleteWrapper'
+    >
       <Autosuggest
         suggestions={filteredSource}
         onSuggestionsFetchRequested={({ value }) => {
@@ -96,20 +109,19 @@ const Autocomplete = ({
           placeholder: placeholder,
           value: value,
           onBlur: () => {
-           if (typeof props.onBlur === 'function') {
-             props.onBlur(value)
-           } else {
-             setValue(mapItemToValue(props.value));
-           }
+            if (typeof props.onBlur === 'function') {
+              props.onBlur(value);
+            } else {
+              setValue(mapItemToValue(props.value));
+            }
           },
-          onKeyUp: (event) => {
-
-             if (event.keyCode === 13) {
-              typeof props.onEnter === 'function' && props.onEnter(value);
-             }
+          onKeyUp: event => {
+            if (event.keyCode === 13) {
+              typeof props.onEnter === 'function' &&
+                props.onEnter(value);
+            }
           },
           onChange: (event, { newValue }) => {
-
             setValue(newValue);
           },
         }}

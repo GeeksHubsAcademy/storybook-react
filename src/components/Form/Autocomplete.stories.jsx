@@ -29,13 +29,17 @@ const dataSource = [
   'yei',
 ];
 
-
 export const Default = () => {
   const [value, setValue] = useState('ola');
 
-  return <Autocomplete source={dataSource} value={value} onChange={setValue} />;
+  return (
+    <Autocomplete
+      source={dataSource}
+      value={value}
+      onChange={setValue}
+    />
+  );
 };
-
 
 const dataSourceObj = [
   { value: 'ola' },
@@ -48,9 +52,8 @@ const dataSourceObj = [
   { value: 'yei' },
 ];
 
-
 export const SourceAsObjects = () => {
-  const [value, setValue] = useState({value:'hola'});
+  const [value, setValue] = useState({ value: 'hola' });
 
   return (
     <Autocomplete
@@ -62,15 +65,26 @@ export const SourceAsObjects = () => {
   );
 };
 
+export const HandleNullValue = () => {
+  const [value, setValue] = useState({ value: 'hola' });
 
-
+  return (
+    <Autocomplete
+      source={dataSourceObj}
+      value={undefined}
+      onChange={setValue}
+    />
+  );
+};
 
 export const setValueFromOutside = () => {
   const [value, setValue] = useState(dataSourceObj[0]);
 
   return (
     <>
-      <button onClick={() => setValue(dataSourceObj[3])}>change value</button>
+      <button onClick={() => setValue(dataSourceObj[3])}>
+        change value
+      </button>
       <Autocomplete
         source={dataSourceObj}
         value={value}
@@ -80,7 +94,6 @@ export const setValueFromOutside = () => {
     </>
   );
 };
-
 
 export const variosInline = () => {
   const [value, setValue] = useState(dataSourceObj[0]);
@@ -109,14 +122,12 @@ export const variosInline = () => {
   );
 };
 
-
-
 export const customOnBlur = () => {
   const [value, setValue] = useState('');
 
   return (
     <>
-    <h6>Value selected: {value}</h6>
+      <h6>Value selected: {value}</h6>
       <Autocomplete
         source={[1, 2, 3, 45, 67, 89, 100]}
         value={value}
@@ -126,8 +137,6 @@ export const customOnBlur = () => {
     </>
   );
 };
-
-
 
 export const customOnEnter = () => {
   const [value, setValue] = useState('');
