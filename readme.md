@@ -49,7 +49,7 @@ import Button from "storybook-react-geekshubs/dist/components/Buttons/Button";
     - hooks
     - layout
     - views
-    - servicies
+    - services
 
 ```
 

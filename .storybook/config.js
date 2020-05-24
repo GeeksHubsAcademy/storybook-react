@@ -7,7 +7,7 @@ import { setConsoleOptions } from '@storybook/addon-console';
 import theme from './theme';
 import './overrides.css';
 import 'antd/dist/antd.css';
-// import '../src/servicies/logger.service';
+// import '../src/services/logger.service';
 
 // Option defaults:
 addParameters({

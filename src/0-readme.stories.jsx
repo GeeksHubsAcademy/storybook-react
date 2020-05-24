@@ -2,7 +2,7 @@ import React from 'react';
 
 import readmeTxt from '../readme.md';
 import styled from 'styled-components';
-// import loggerService from './servicies/logger.service';
+// import loggerService from './services/logger.service';
 import Markdown from 'react-markdown'
 ;
 const Wrapper = styled.pre`
